@@ -38,40 +38,6 @@ def about():
     return render_template('about.html')
 
 
-# Articles
-@app.route('/articles')
-def articles():
-    # Create cursor
-    cur = mysql.connection.cursor()
-
-    # Get articles
-    result = cur.execute("SELECT * FROM articles")
-
-    articles = cur.fetchall()
-
-    if result > 0:
-        return render_template('articles.html', articles=articles)
-    else:
-        msg = 'No Articles Found'
-        return render_template('articles.html', msg=msg)
-    # Close connection
-    cur.close()
-
-
-#Single Article
-@app.route('/article/<string:id>/')
-def article(id):
-    # Create cursor
-    cur = mysql.connection.cursor()
-
-    # Get article
-    result = cur.execute("SELECT * FROM articles WHERE id = %s", [id])
-
-    article = cur.fetchone()
-
-    return render_template('article.html', article=article)
-
-
 # Student Register Form Class
 class RegisterForm(Form):
     name = StringField('Name', [validators.Length(min=1, max=50), validators.DataRequired()])
