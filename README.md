@@ -5,7 +5,7 @@ A simple web app to automate the recording of attendance via bluetooth using a r
 
 # Installation
 
-To use this template, your computer needs:
+To use this project, your computer needs:
 
 1) Python 2 or 3
 2) Pip Package Manager
