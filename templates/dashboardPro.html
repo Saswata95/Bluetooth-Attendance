@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Dashboard <small> Welcome {{session.username}}</small></h1>
+  <a class="btn btn-success" href="/check_attendance"> Check Attendance</a>
+  <hr>
+ <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>Attendance</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+    {% for attend in attends %}
+      <tr>
+        <td>{{attend.name}}</td>
+        <td>{{attend.subject}}</td>
+        <td>{{attend.presabs}}</td>
+        <td>{{attend.class_date}}</td>
+        <td>
+          <form action="{{url_for('delete_attendance', id=attend.id)}}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

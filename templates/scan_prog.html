@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  
+<div class="col-sm-10 col-sm-offset-2">
+    <h1>Scanning In Progress</h1>
+    <p>Please wait for Few minutes and then Check your Dashboard.</p>
+    <img src="{{ url_for('static', filename='radar-loading.gif') }}">
+    <a href="/dashboardPro" class="btn btn-primary btn-lg">Go back to Dashboard</a>
+</div>
+        
+{% endblock %}

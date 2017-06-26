@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bluetooth Attendance App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='bluetooth_DIf_icon.ico') }}">
+      
+  </head>
+  <body>
+    {% include 'includes/_navbar.html' %}
+    <header class="jumbotron1">
+        <div class="headline">
+            <div class="container">
+               <h1></h1>
+                <h2></h2>
+            </div>
+        </div>
+    </header>
+
+      
+    <div class="container">
+        <div class="row row-content">
+            {% include 'includes/_messages.html' %}
+            {% block body %}{% endblock %}
+        </div>
+        
+
+      
+    </div>
+      
+      <footer class="row-footer footer navbar-fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <p>&copy; 2017 All Rights Reserved</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>Developed By Team F5</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
+    <script type="text/javascript">
+      CKEDITOR.replace('editor')
+    </script>
+  </body>
+</html>

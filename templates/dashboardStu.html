@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Dashboard <small> Welcome {{session.username}}</small></h1>
+  <a class="btn btn-success" href="/change_mac"> Change Mac Adress</a>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Subject</th>
+      <th>Attendance</th>
+      <th>Date</th>
+    </tr>
+    {% for attend in attends %}
+      <tr>
+        <td>{{attend.id}}</td>
+        <td>{{attend.subject}}</td>
+        <td>{{attend.presabs}}</td>
+        <td>{{attend.class_date}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
